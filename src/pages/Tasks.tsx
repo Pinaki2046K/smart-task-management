@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "motion/react";
+import { useTasks } from '/Users/pinakiauddy49/Desktop/smart-task-&-reminder-management-system/src/context/taskContext.tsx';
 import { 
   LayoutGrid, 
   List, 
@@ -12,7 +13,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
-import { MOCK_TASKS } from "../constants/mockData";
+// import { MOCK_TASKS } from "../constants/mockData";
 import { Modal } from "../components/ui/Modal";
 import { Input } from "../components/ui/Input";
 import { Label } from "../components/ui/Label";
@@ -22,6 +23,7 @@ import { cn } from "../utils/utils";
 export default function Tasks() {
   const [view, setView] = React.useState<'grid' | 'list'>('grid');
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const { tasks } = useTasks();
 
   return (
     <div className="space-y-8">
@@ -58,7 +60,7 @@ export default function Tasks() {
 
       {view === 'grid' ? (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {MOCK_TASKS.map((task, i) => (
+          {tasks.map((task, i) => (
             <motion.div
               key={task.id}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -102,7 +104,7 @@ export default function Tasks() {
       ) : (
         <Card className="rounded-2xl border-zinc-100 shadow-sm dark:border-zinc-800">
           <div className="divide-y divide-zinc-50 dark:divide-zinc-900">
-            {MOCK_TASKS.map((task) => (
+            {tasks.map((task) => (
               <div key={task.id} className="flex items-center gap-4 p-4 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900">
                 <Checkbox />
                 <div className="flex-1">

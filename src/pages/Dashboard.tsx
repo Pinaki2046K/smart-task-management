@@ -1,5 +1,7 @@
 import * as React from "react";
 import { motion } from "motion/react";
+import { useTasks } from '/Users/pinakiauddy49/Desktop/smart-task-&-reminder-management-system/src/context/taskContext.tsx';
+
 import { 
   CheckCircle2, 
   Clock, 
@@ -9,7 +11,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
-import { MOCK_TASKS } from "../constants/mockData";
+// import { MOCK_TASKS } from "../constants/mockData";
 import { Badge } from "../components/ui/Badge";
 
 import { cn } from "../utils/utils";
@@ -21,6 +23,7 @@ export default function Dashboard() {
     { label: "Missed", value: "3", icon: AlertCircle, color: "text-red-500", bg: "bg-red-50" },
     { label: "Productivity", value: "84%", icon: TrendingUp, color: "text-emerald-500", bg: "bg-emerald-50" },
   ];
+  const { tasks } = useTasks();
 
   return (
     <div className="space-y-8">
@@ -66,7 +69,7 @@ export default function Dashboard() {
             <CardTitle>Recent Tasks</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {MOCK_TASKS.slice(0, 4).map((task) => (
+            {tasks.slice(0, 4).map((task) => (
               <div key={task.id} className="flex items-center justify-between rounded-xl border border-zinc-50 p-4 transition-colors hover:bg-zinc-50 dark:border-zinc-900 dark:hover:bg-zinc-900">
                 <div className="flex items-center gap-4">
                   <div className={cn(
