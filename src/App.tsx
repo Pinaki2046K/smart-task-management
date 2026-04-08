@@ -7,7 +7,7 @@ import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { TaskProvider } from "/Users/pinakiauddy49/Desktop/smart-task-&-reminder-management-system/src/context/taskContext.tsx";
+import { TaskProvider } from "./context/taskContext";
 import { AIChat } from "./components/AIChat";
 
 export default function App() {
