@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { scheduleTasksWithAI } from '../services/gemini';
-import { useTasks } from '/Users/pinakiauddy49/Desktop/smart-task-&-reminder-management-system/src/context/taskContext.tsx';
+import { useTasks } from '../context/taskContext.tsx';
 
 export function AIChat() {
   const [open, setOpen] = useState(false);
