@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "motion/react";
-import { useTasks } from '/Users/pinakiauddy49/Desktop/smart-task-&-reminder-management-system/src/context/taskContext.tsx';
+import { useTasks } from '../context/taskContext';
 
 import { 
   CheckCircle2, 
