@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 import { Task } from '../types';
 import { MOCK_TASKS } from '../constants/mockData';
-
 interface TaskContextType {
   tasks: Task[];
   addTasks: (newTasks: Omit<Task, 'id'>[]) => void;
